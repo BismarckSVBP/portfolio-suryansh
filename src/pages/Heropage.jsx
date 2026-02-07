@@ -248,7 +248,7 @@ const Heropage = () => {
       <div className="bg-[#131313] p-6 rounded-xl border border-[#2a2a2a] shadow-md h-full">
         <h3 className="text-md font-semibold text-green-400 mb-2">👋 About Me</h3>
         <p className="text-sm text-gray-300 leading-relaxed">
-          I’m Suryansh Srivastava, a passionate visual storyteller and motion designer. I believe every frame tells a story and every design speaks a language. Through work with university societies and freelancing for multiple clients, I transform ideas into compelling visual narratives—from engaging social media content to merchandise designs people love to wear—blending creativity with technical excellence.
+          I’m Suryansh Srivastava, a passionate visual storyteller and motion designer. I believe every frame tells a story and every design speaks a language. Through work with university societies and freelancing for multiple clients, I transform ideas into compelling visual narratives—from engaging social media content to merchandise designs people love to wear—blending creativity with technical excellence.AI-Assisted Video Production: Experienced in using advanced AI tools such as Higgsfield AI, Flow AI, Kling AI, ChatGPT Go, and Nano Banana (Gemini) for ideation, scripting, visual generation, and workflow optimization in video editing projects.
         </p>
       </div>
 
@@ -262,6 +262,11 @@ const Heropage = () => {
             ["Capcut", 5],
             ["Photoshop", 4],
             ["Canva", 5],
+            ["Higgsfield", 5],
+            ["Flow AI", 5],
+            ["Kling AI", 5],
+            ["ChatGPT Go", 5],
+            ["Nano Banana (Gemini)", 5]
           ].map(([tool, level], i) => (
             <li key={i}>
               <div className="flex justify-between items-center">
@@ -283,6 +288,12 @@ const Heropage = () => {
         <div className="space-y-4 text-sm text-gray-300">
           {[
             {
+              title: "Freelance Video Editor & Graphic Designer",
+              org: "COLD BREW TECH PVT LTD",
+              time: "2026–Present",
+              desc: "Created engaging promotional videos and social media content for enhancing brand visibility and customer engagement through compelling visual storytelling using advanced ai models."
+            },
+            {
               title: "Joint Secretary",
               org: "National Service Scheme, MMMUT",
               time: "2025–Present",
@@ -299,7 +310,7 @@ const Heropage = () => {
               org: "EEL, MMMUT",
               time: "2025–Present",
               desc: "Designed promotional content for Fest Electra. Amplified digital presence."
-            }
+            },
           ].map((item, i) => (
             <div key={i}>
               <p className="text-white font-semibold">{item.title} – <span className="text-green-400">{item.org}</span> <span className="text-xs text-gray-500">{item.time}</span></p>
@@ -674,7 +685,63 @@ const workData = [
     type: "Shorts",
     title: "Short Video 3",
     // description: "Another creative short for social media.",
+    media: "https://res.cloudinary.com/dod1dviie/video/upload/v1770440904/Motion_Graphics_sjrujv.mp4",
+    previewType: "video",
+  },
+    {
+    type: "Shorts",
+    title: "Short Video 4",
+    // description: "Another creative short for social media.",
+    media: "https://res.cloudinary.com/dod1dviie/video/upload/v1770441080/Short_form_reel-1_gryo51.mp4",
+    previewType: "video",
+  },
+  {
+    type: "Artificial",
+    title: "Short Video 1",
+    // description: "Another creative short for social media.",
     media: "https://res.cloudinary.com/dod1dviie/video/upload/v1768416983/Task_Completion_1_prob4_1_g5iih7.mp4",
+    previewType: "video",
+  },
+  {
+    type: "Artificial",
+    title: "Short Video 2",
+    // description: "Another creative short for social media.",
+    media: "https://res.cloudinary.com/dod1dviie/video/upload/v1770440957/Script_1_e6dhmf.mp4",
+    previewType: "video",
+  },
+  {
+    type: "Artificial",
+    title: "Short Video 3",
+    // description: "Another creative short for social media.",
+    media: "https://res.cloudinary.com/dod1dviie/video/upload/v1770441184/Telugu_AI2_jfi9vz.mp4",
+    previewType: "video",
+  },
+  {
+    type: "Artificial",
+    title: "Short Video 4",
+    // description: "Another creative short for social media.",
+    media: "https://res.cloudinary.com/dod1dviie/video/upload/v1770441194/Rashmikascript4_ktnkdo.mp4",
+    previewType: "video",
+  },
+  {
+    type: "Artificial",
+    title: "Short Video 5",
+    // description: "Another creative short for social media.",
+    media: "https://res.cloudinary.com/dod1dviie/video/upload/v1770441202/Script_8_e4uxct.mp4",
+    previewType: "video",
+  },
+  {
+    type: "Artificial",
+    title: "Short Video 6",
+    // description: "Another creative short for social media.",
+    media: "https://res.cloudinary.com/dod1dviie/video/upload/v1770441254/UGC-1_rpnjbq.mp4",
+    previewType: "video",
+  },
+  {
+    type: "Artificial",
+    title: "Short Video 7",
+    // description: "Another creative short for social media.",
+    media: "https://res.cloudinary.com/dod1dviie/video/upload/v1770441252/UGC-2_ocxjth.mp4",
     previewType: "video",
   },
   // Thumbnails
@@ -787,10 +854,11 @@ const WorkShowcase = ({ videosRef, handlePlay }) => {
     return acc;
   }, {});
   
-  const categoryOrder = ["Long Video", "Shorts", "Cinematography", "Thumbnails", "Banners"];
+  const categoryOrder = ["Long Video", "Shorts","Artificial", "Cinematography", "Thumbnails", "Banners"];
   const categoryColors = {
     "Long Video": "text-green-400",
     Shorts: "text-pink-400",
+    Artificial: "text-red-400",
     Cinematography: "text-purple-400",
     Thumbnails: "text-blue-400",
     Banners: "text-yellow-400",
@@ -807,6 +875,7 @@ let globalIndex = 1;
   const cardColors = {
     "Long Video": "from-green-600/20 to-green-400/10 border-green-400/40",
     Shorts: "from-pink-500/20 to-yellow-400/10 border-pink-400/40",
+    Artificial: "from-red-600/20 to-red-400/10 border-red-400/40",
     Cinematography: "from-purple-600/20 to-indigo-600/10 border-purple-400/40",
     Thumbnails: "from-blue-400/20 to-purple-400/10 border-blue-400/40",
     Banners: "from-yellow-400/20 to-orange-400/10 border-yellow-400/40",
@@ -827,6 +896,7 @@ let globalIndex = 1;
                 <span className={categoryColors[category]}>
                   {category === "Long Video" ? "Long Videos" :
                    category === "Shorts" ? "Short Videos" :
+                   category === "Artificial" ? "AI Generated Videos" :
                    category === "Cinematography" ? "Cinematography Videos" :
                    category}
                 </span>
@@ -837,6 +907,7 @@ let globalIndex = 1;
                     const getAspectRatio = (type) => {
                       if (type === "Thumbnails") return "aspect-square";
                       if (type === "Shorts") return "aspect-[9/16]";
+                      if (type === "Artificial") return "aspect-[9/16]";
                       if (type === "Banners") return "aspect-video";
                       return "aspect-video";
                     };
